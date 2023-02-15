@@ -1,3 +1,13 @@
+function felhasznalonev()
+{
+    let nev=document.getElementById("felhasznalonev").value
+
+    if (nev.length <5 || nev.length >16)
+    {
+        alert("A felhasználónévnek minimum 5 és maximum 16 karakter hosszúnak kell lennie!")
+    }
+}
+
 function jelszo()
 {
     let jelszo1=document.getElementById("jelszo1").value
