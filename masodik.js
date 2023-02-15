@@ -1,3 +1,9 @@
+const adatok = []
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("gomb").addEventListener('click', objektum)
+})
+
 function felhasznalonev()
 {
     let nev=document.getElementById("felhasznalonev").value
@@ -67,7 +73,7 @@ function jelszo()
     }
 }
 
-function mail()
+function email()
 {
     let mail=document.getElementById("email").value
 
@@ -81,8 +87,47 @@ function mail()
     }
 }
 
+function objektum()
+{
+    const aha = document.forms["aha"]
+    const felhasznalonev=aha["felhasznalonev"].value
+    const jelszo1=aha["jelszo1"].value
+    const jelszo2=aha["jelszo2"].value
+    const email=aha["email"].value
+    const datum=aha["datum"].value
 
+    let minden=true
 
+    if(felhasznalonev.length==0)
+    {
+        minden=false
+    }
+    if(jelszo1.length==0)
+    {
+        minden=false
+    }
+    if(jelszo2.length==0)
+    {
+        minden=false
+    }
+    if(email.length==0)
+    {
+        minden=false
+    }
+    if(datum.length==0)
+    {
+        minden=false
+    }
 
-
-
+    if (minden) {
+        const rastinger={
+            felhasznalonev: felhasznalonev,
+            jelszo1: jelszo1,
+            jelszo2: jelszo2,
+            email: email,
+            datum: datum
+        }
+        adatok.push(rastinger)
+        console.log(adatok)
+    }
+}
