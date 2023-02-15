@@ -1,56 +1,65 @@
 function jelszo()
 {
-    let jelszo1=document.getElementById("jelszo1").value;
-    let jelszo2=document.getElementById("jelszo2").value;
+    let jelszo1=document.getElementById("jelszo1").value
+    let jelszo2=document.getElementById("jelszo1").value
 
-    if (jelszo1!=jelszo2)
-{
-    alert("A jelszavak nem egyeznek!")
-}
-if(jelszo1.length<5 )
-{
-    alert("A jelszónak legalább 5 karakter hosszúnak kell lennie!")
-}
-if(jelszo2.length<5 )
-{
-    alert("Az ellenörző jelszónak is legalább 5 karakter hosszúnak kell lennie!")
-}
-
-if (jelszo1==jelszo2)
-{
-    if (jelszo1.includes("A" || "B" || "C" || "D" || "E" || "F" || "G" || "H" || "I" || "J" || "K" || "L" || "M" || "N" || "O" || "P"|| "Q" || "R" || "S" || "T" || "U" || "V" || "W" || "X" || "Y" || "Z"))
+    if(jelszo1!=jelszo2)
     {
-        console.log("aha")
-    }
-    else
-    {
-        alert("A jelszónak tartalmaznia kell nagybetűt is!")
+        alert("A két jelszó nem egyezik!")
     }
 
-    if (jelszo1.includes("a" || "b" || "c" || "d" || "e" || "f" || "g" || "h" || "i" || "j" || "k" || "l" || "m" || "n" || "o" || "p"|| "q" || "r" || "s" || "t" || "i" || "v" || "w" || "x" || "y" || "z"))
+    if(jelszo1==jelszo2)
     {
-        console.log("aha")
-    }
-    else
-    {
-        alert("A jelszónak tartalmaznia kell kisbetűt is!")
-    }
+        const kisbetu = /[a-z]/g
+        if(jelszo1.match(kisbetu)) 
+        {  
+            console.log("aha")
+        }
+        else
+        {
+            alert("A jelszónak tartalmaznia kell kisbetűt is.")
+        }
 
-    if (jelszo1.includes("0" || "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9"))
-    {
-        console.log("aha")
+        const nagybetu = /[A-Z]/g
+        if(jelszo1.match(nagybetu)) 
+        {  
+            console.log("aha")
+        }
+        else 
+        {
+            alert("A jelszónak tartalmaznia kell NAGYBETŰT is.")
+        }
+
+        const szam = /[0-9]/g
+        if(jelszo1.match(szam)) 
+        {  
+            console.log("aha")
+        }
+        else 
+        {
+            alert("A jelszónak tartalmaznia kell számot is.")
+        }
+
+        const speckar = /[!@#$%^&*]/g
+        if(jelszo1.match(speckar))
+        {
+            console.log("aha")
+        }
+        else
+        {
+            alert("A jelszónak tartalmaznia kell speciális karaktert is!")
+        }
+
+        if(jelszo1.length<5)
+        {
+            alert("A jelszónak legalább 5 karakter hosszúnak kell lennie!")
+        }
     }
-    else
-    {
-        alert("A jelszónak tartalmaznia kell számot is!")
-    }
-}
 }
 
 function mail()
 {
     let mail=document.getElementById("email").value
-    
 
     if (mail.includes("@","."))
     {
@@ -61,5 +70,9 @@ function mail()
         alert("Hibás e-mail cím!")
     }
 }
+
+
+
+
 
 
